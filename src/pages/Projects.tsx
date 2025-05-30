@@ -17,7 +17,9 @@ const Projects = () => {
       image: '/images/codex-image.jpg',
       link: 'https://code-x-frontend-nu.vercel.app/'
     },
-    { title: 'RedBus-Clone', description: 'A clone of the popular bus ticket booking platform, built with Angular , Bootstrap and JavaScript',
+    { 
+      title: 'RedBus-Clone', 
+      description: 'A clone of the popular bus ticket booking platform, built with Angular , Bootstrap and JavaScript',
       tech: ['Angular', 'Bootstrap', 'JavaScript'],
       image: '/images/redbus-clone-img.png',
       link: 'https://code-x-frontend-nu.vercel.app/'
