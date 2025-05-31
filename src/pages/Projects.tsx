@@ -22,7 +22,7 @@ const Projects = () => {
       description: 'A clone of the popular bus ticket booking platform, built with Angular , Bootstrap and JavaScript',
       tech: ['Angular', 'Bootstrap', 'JavaScript'],
       image: '/images/redbus-clone-img.png',
-      link: 'https://code-x-frontend-nu.vercel.app/'
+      link: 'https://redbus-clone-eosin.vercel.app/'
     },
   ];
 
