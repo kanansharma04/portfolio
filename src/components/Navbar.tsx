@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
 const Navbar: React.FC = () => {
@@ -17,13 +17,8 @@ const Navbar: React.FC = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const toggleMenu = () => setIsMenuOpen(open => !open);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <motion.nav
@@ -32,55 +27,59 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="navbar"
     >
-      {/* Desktop Navigation */}
-      <div className="nav-links desktop-nav">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
-      
-      <div className="nav-right desktop-nav">
-        <motion.button 
-          className="theme-toggle"
-          onClick={toggleTheme}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {theme === 'dark' ? '🌞' : '🌙'}
-        </motion.button>
+      {/* Desktop/Tablet Navbar */}
+      <div className="desktop-nav">
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+        <div className="nav-right">
+          <motion.button 
+            className="theme-toggle"
+            onClick={toggleTheme}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {theme === 'dark' ? '🌞' : '🌙'}
+          </motion.button>
+        </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navbar */}
       <div className="mobile-nav">
-        <button className="hamburger-button" onClick={toggleMenu}>
-          <div className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
+        <button className="hamburger-button" onClick={toggleMenu} aria-label="Open menu">
+          <div className={`hamburger-icon${isMenuOpen ? ' open' : ''}`}>
             <span></span>
             <span></span>
             <span></span>
           </div>
         </button>
-        
-        {isMenuOpen && (
-          <motion.div
-            className="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link to="/" onClick={closeMenu}>Home</Link>
-            <Link to="/about" onClick={closeMenu}>About</Link>
-            <Link to="/projects" onClick={closeMenu}>Projects</Link>
-            <Link to="/contact" onClick={closeMenu}>Contact</Link>
-            <button className="theme-toggle mobile" onClick={toggleTheme}>
-              {theme === 'dark' ? '🌞' : '🌙'}
-            </button>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="mobile-menu"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Link to="/" onClick={closeMenu}>Home</Link>
+              <Link to="/about" onClick={closeMenu}>About</Link>
+              <Link to="/projects" onClick={closeMenu}>Projects</Link>
+              <Link to="/contact" onClick={closeMenu}>Contact</Link>
+              <button className="theme-toggle mobile" onClick={toggleTheme}>
+                {theme === 'dark' ? '🌞' : '🌙'}
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   )
 }
 
 export default Navbar
+
+

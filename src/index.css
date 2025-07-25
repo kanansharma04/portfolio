@@ -70,10 +70,30 @@ nav {
   align-items: center;
 }
 
+.desktop-nav .nav-links a,
+.mobile-menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: color 0.3s, background 0.3s;
+  display: inline-block;
+}
+
+.desktop-nav .nav-links a:hover,
+.mobile-menu a:hover {
+  color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.08);
+}
+
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .mobile-nav {
@@ -92,29 +112,28 @@ nav {
 .hamburger-icon {
   width: 24px;
   height: 20px;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .hamburger-icon span {
   display: block;
   width: 100%;
-  height: 2px;
+  height: 2.5px;
   background: var(--text-primary);
-  transition: all 0.3s ease;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
 
-.hamburger-icon.open span:first-child {
+.hamburger-icon.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
-
 .hamburger-icon.open span:nth-child(2) {
   opacity: 0;
 }
-
-.hamburger-icon.open span:last-child {
+.hamburger-icon.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
@@ -139,7 +158,7 @@ nav {
   text-decoration: none;
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: background 0.3s;
   font-weight: 500;
 }
 
@@ -158,14 +177,28 @@ nav {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* Responsive Navbar */
 @media (max-width: 768px) {
+  nav {
+    padding: 0.75rem 1rem;
+  }
   .desktop-nav {
     display: none;
   }
-
   .mobile-nav {
     display: block;
+  }
+  .mobile-menu {
+    top: 56px;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+  .mobile-menu a {
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem;
+  }
+  .theme-toggle.mobile {
+    padding: 0.75rem 0;
   }
 }
 
@@ -174,41 +207,111 @@ nav {
   .mobile-nav {
     display: none;
   }
+  .desktop-nav {
+    display: flex;
+  }
 }
 
-nav a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 500;
-  position: relative;
-  padding: 0.75rem 1rem;
-  transition: color 0.3s ease;
+/* Responsive Home Page */
+@media (max-width: 900px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+    min-height: auto;
+  }
+  .left-section, .right-section {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  .left-section h1 {
+    font-size: 2rem;
+  }
 }
 
-nav a:hover {
-  color: var(--primary-color);
+/* Responsive Projects Page */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .project-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .project-image {
+    height: 160px;
+  }
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+/* Responsive About Page */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .skill-card {
+    padding: 1rem;
+  }
+  .education-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .education-item {
+    padding: 1rem;
+  }
 }
 
-.theme-toggle {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  cursor: pointer;
-  padding: 0.75rem;
-  color: var(--text-primary);
-  border-radius: 50%;
-  transition: all 0.3s ease;
+/* Responsive Contact Page */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .form-container {
+    padding: 1rem;
+  }
+  .contact-image {
+    min-height: 180px;
+  }
 }
 
-.theme-toggle:hover {
-  background: var(--primary-gradient);
-  transform: rotate(90deg);
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 0.5rem;
+  }
+  .left-section h1 {
+    font-size: 1.3rem;
+  }
+  .image-container {
+    width: 140px;
+    height: 140px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .project-card {
+    padding: 0.5rem;
+  }
+  .project-image {
+    height: 100px;
+  }
+  .about h1.gradient-text,
+  .about-header h1.gradient-text {
+    font-size: 1.5rem;
+  }
 }
 
 /* Pages */
