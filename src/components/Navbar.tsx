@@ -34,6 +34,13 @@ const Navbar: React.FC = () => {
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/contact">Contact</Link>
+          <a 
+            href="/resume.pdf" 
+            download="Kanan_Sharma_Resume.pdf"
+            className="resume-link"
+          >
+            Download Resume
+          </a>
         </div>
         <div className="nav-right">
           <motion.button 
@@ -69,6 +76,14 @@ const Navbar: React.FC = () => {
               <Link to="/about" onClick={closeMenu}>About</Link>
               <Link to="/projects" onClick={closeMenu}>Projects</Link>
               <Link to="/contact" onClick={closeMenu}>Contact</Link>
+              <a 
+                href="/resume.pdf" 
+                download="portfolio/public/kana_resume_final.pdf"
+                className="resume-link"
+                onClick={closeMenu}
+              >
+                Download Resume
+              </a>
               <button className="theme-toggle mobile" onClick={toggleTheme}>
                 {theme === 'dark' ? '🌞' : '🌙'}
               </button>
