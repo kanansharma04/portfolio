@@ -19,7 +19,7 @@ This portfolio was built using:
 
 ## 🚀 Live Demo
 
-👉 [View Portfolio Live](https://your-live-portfolio-link.com)
+👉 [View Portfolio Live]([https://your-live-portfolio-link.com](https://portfolio-wheat-seven-96.vercel.app/))
 
 ## 📁 Features
 
