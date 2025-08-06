@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
           <Link to="/projects">Projects</Link>
           <Link to="/contact">Contact</Link>
           <a 
-            href="/resume.pdf" 
+            href="/kana_resume_final.pdf" 
             download="Kanan_Sharma_Resume.pdf"
             className="resume-link"
           >
@@ -77,8 +77,8 @@ const Navbar: React.FC = () => {
               <Link to="/projects" onClick={closeMenu}>Projects</Link>
               <Link to="/contact" onClick={closeMenu}>Contact</Link>
               <a 
-                href="/resume.pdf" 
-                download="portfolio/public/kana_resume_final.pdf"
+                href="/kana_resume_final.pdf" 
+                download="Kanan_Sharma_Resume.pdf"
                 className="resume-link"
                 onClick={closeMenu}
               >
