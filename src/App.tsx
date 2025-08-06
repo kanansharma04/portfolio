@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Highlights from './pages/Highlights'
 import PageTransition from './components/PageTransition'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/about" element={<PageTransition><About /></PageTransition>} />
             <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+            <Route path="/highlights" element={<PageTransition><Highlights /></PageTransition>} />
           </Routes>
         </AnimatePresence>
       </div>

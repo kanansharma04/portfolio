@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import Footer from './Footer';
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -13,16 +14,19 @@ const pageVariants = {
 
 const PageLayout = ({ children }: PageLayoutProps) => {
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-      transition={{ duration: 0.5 }}
-      className="page-container"
-    >
-      {children}
-    </motion.div>
+    <div className="app">
+      <motion.main
+        className="page-container"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={{ duration: 0.5 }}
+      >
+        {children}
+      </motion.main>
+      <Footer />
+    </div>
   );
 };
 

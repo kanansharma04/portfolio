@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
+          <Link to="/highlights">Highlights</Link>
           <Link to="/contact">Contact</Link>
           <a 
             href="/kana_resume_final.pdf" 
@@ -73,9 +74,11 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.2 }}
             >
               <Link to="/" onClick={closeMenu}>Home</Link>
-              <Link to="/about" onClick={closeMenu}>About</Link>
+              <Link to="/about" onClick={closeMenu}>Tech Stack</Link>
               <Link to="/projects" onClick={closeMenu}>Projects</Link>
+              <Link to="/Highlights" onClick={closeMenu}>Highlights</Link>
               <Link to="/contact" onClick={closeMenu}>Contact</Link>
+              {/* <Link to="/contact" onClick={closeMenu}>Contact</Link> */}
               <a 
                 href="/kana_resume_final.pdf" 
                 download="Kanan_Sharma_Resume.pdf"
