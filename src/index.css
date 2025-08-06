@@ -212,134 +212,291 @@ nav {
   }
 }
 
-/* Responsive Home Page */
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .home-container {
+    max-width: 100%;
+    gap: 2.5rem;
+    padding: 1.5rem;
+  }
+  
+  .image-container {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  
+  .left-section h1 {
+    font-size: 2.8rem;
+  }
+}
+
+/* Medium screens (tablets) */
 @media (max-width: 900px) {
   .home-container {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 1rem;
-    min-height: auto;
-    width: 100%;
-  }
-  .left-section, .right-section {
-    width: 100%;
     text-align: center;
-    align-items: center;
+  }
+  
+  .left-section {
+    order: 1;
+    text-align: center;
+  }
+  
+  .right-section {
+    order: 2;
     justify-content: center;
   }
+  
   .image-container {
-    width: 220px;
-    height: 220px;
+    width: 250px !important;
+    height: 250px !important;
     margin: 0 auto;
   }
+  
   .left-section h1 {
-    font-size: 2rem;
-    word-break: break-word;
+    font-size: 2.2rem;
+    text-align: center;
   }
-  .about-text {
-    font-size: 1rem;
-    padding: 0 0.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .home-container {
-    padding: 0.5rem;
-    gap: 1.2rem;
-  }
-  .left-section h1 {
-    font-size: 1.3rem;
-    padding: 0 0.2rem;
-  }
-  .image-container {
-    width: 120px;
-    height: 120px;
-  }
-  .about-text {
-    font-size: 0.95rem;
-    padding: 0 0.2rem;
-  }
+  
   .roles-text {
-    font-size: 0.95rem;
-    padding: 0 0.2rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .about-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .resume-download-btn {
+    margin: 1rem auto !important;
+    display: block !important;
+    text-align: center;
+    width: fit-content;
   }
 }
 
-/* Responsive Projects Page */
-@media (max-width: 900px) {
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .left-section {
+    order: 1;
+  }
+  
+  .right-section {
+    order: 2;
+  }
+  
+  .page-container {
+    padding: 1rem;
+  }
+  
+  .home-container {
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  .image-container {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .left-section h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .roles-text {
+    font-size: 1rem;
+  }
+  
+  .about-text {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+  
+  .resume-download-btn {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Projects responsive */
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin-top: 1rem;
   }
-  .project-card {
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  .project-image {
-    height: 160px;
-  }
-}
-
-/* Responsive About Page */
-@media (max-width: 900px) {
+  
+  /* Skills responsive */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  .skill-card {
-    padding: 1rem;
-  }
-  .education-container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .education-item {
-    padding: 1rem;
-  }
-}
-
-/* Responsive Contact Page */
-@media (max-width: 900px) {
+  
+  /* Contact responsive */
   .contact-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1rem;
-    margin: 1rem 0;
-  }
-  .form-container {
-    padding: 1rem;
-  }
-  .contact-image {
-    min-height: 180px;
   }
 }
 
-/* Extra Small Screens */
+/* Extra small screens */
 @media (max-width: 480px) {
-  .page-container {
-    padding: 0.5rem;
+  .home-container {
+    gap: 1rem;
+    padding: 0.25rem;
   }
+  
+  .image-container {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  
+  .left-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .roles-text {
+    font-size: 0.9rem;
+  }
+  
+  .about-text {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+  }
+  
+  .resume-download-btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .contact-image {
+    min-height: 150px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .image-container {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  
   .left-section h1 {
     font-size: 1.3rem;
   }
+  
+  .about-text {
+    padding: 0 0.25rem;
+  }
+}
+
+/* Fix horizontal scrolling for very small screens */
+@media (max-width: 375px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  .page-container {
+    padding: 0.5rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .home-container {
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .left-section,
+  .right-section {
+    padding: 0 0.25rem;
+    max-width: 100%;
+  }
+  
   .image-container {
-    width: 140px;
-    height: 140px;
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto;
   }
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  
+  .left-section h1 {
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
   }
+  
+  .roles-text {
+    font-size: 0.8rem;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+  
+  .about-text {
+    font-size: 0.8rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .about-text p {
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+  
+  .resume-download-btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
+    margin: 0.5rem auto !important;
+  }
+  
+  /* Navigation fixes */
+  nav {
+    padding: 0.5rem !important;
+  }
+  
+  .mobile-menu {
+    padding: 0.5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Project cards */
   .project-card {
     padding: 0.5rem;
+    margin: 0 0 0.5rem 0;
   }
-  .project-image {
-    height: 100px;
+  
+  /* Skills grid */
+  .skills-grid {
+    gap: 0.5rem;
+    padding: 0;
   }
-  .about h1.gradient-text,
-  .about-header h1.gradient-text {
-    font-size: 1.5rem;
+  
+  .skill-card {
+    padding: 0.5rem;
+  }
+  
+  /* Contact form */
+  .contact-container {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
   }
 }
 
