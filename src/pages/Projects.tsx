@@ -3,6 +3,13 @@ import PageLayout from '../components/PageLayout';
 
 const Projects = () => {
   const projects = [
+     {
+      title: 'Leadership Dashboard',
+      description: 'A full stack web application where user can add and claim random points for a selected user and can see all users according to their claimed points',
+      tech: [' React.js ', ' tailwind CSS ', ' TypeScript ', 'Mongodb','Express.js',' Node.js'],
+      image: '/images/Screenshot 2025-08-21 233132.png',
+      link: 'https://w3-assignment-frontend.onrender.com/'
+    },
     { 
       title: 'Softshell', 
       description: 'A license exchange website transforming unused softwares into revenue. Built with React, Tailwind, and JavaScript having animations and transitions.',
@@ -38,13 +45,9 @@ const Projects = () => {
       image: '/images/amrr.jpeg',
       link: 'https://amrr-assignment-navy.vercel.app/'
     },
-    {
-      title: 'Skincare',
-      description: 'A modern skincare application with landing page and and a clone of figma file.',
-      tech: [' React.js ', ' tailwind CSS ', ' TypeScript '],
-      image: '/images/skincare.jpeg',
-      link: 'https://skincare-sixnine.vercel.app/'
-    }
+    
+    
+    
   ];
 
   return (
