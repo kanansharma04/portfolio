@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           <Link to="/highlights">Highlights</Link>
           <Link to="/contact">Contact</Link>
           <a 
-            href="/kana_resume_final.pdf" 
+            href="/kanan_resume_aiml.pdf" 
             download="Kanan_Sharma_Resume.pdf"
             className="resume-link"
           >

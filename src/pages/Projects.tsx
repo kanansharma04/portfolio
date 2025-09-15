@@ -3,6 +3,13 @@ import PageLayout from '../components/PageLayout';
 
 const Projects = () => {
   const projects = [
+    {
+      title: 'Task Manager',
+      description: 'A full stack web application where user can add, edit , delete and mark tasks as completed. Built with React, Bootstrap, TypeScript, Node.js, Express.js, and Postgress for a seamless task management experience.',
+      tech: [' React.js ', ' tailwind CSS ', ' TypeScript ', 'Mongodb','Express.js',' Node.js'],
+      image: '/images/task-manager.png',
+      link: 'https://task-manager-frontend-steel-phi.vercel.app'
+    },
      {
       title: 'Leadership Dashboard',
       description: 'A full stack web application where user can add and claim random points for a selected user and can see all users according to their claimed points',
@@ -38,13 +45,7 @@ const Projects = () => {
       image: '/images/download.jpeg',
       link: 'https://devtask-hazel.vercel.app/'
     },
-    {
-      title: 'AMRR',
-      description: 'An e-commerce platform focused on adding and viewing products.',
-      tech: [' React.js ', ' Node.js ', ' API '],
-      image: '/images/amrr.jpeg',
-      link: 'https://amrr-assignment-navy.vercel.app/'
-    },
+    
     
     
     
